@@ -20,6 +20,14 @@ function pageLoad(params) {
     </code>`,
   });
 
+  notes.push({
+    tag: "pre",
+    content: `<code>
+    let root = document.querySelector("#root");
+    let body = document.querySelector("body");
+    </code>`,
+  });
+
   for (note of notes) {
     root.insertAdjacentHTML(
       "beforeend",
@@ -27,9 +35,19 @@ function pageLoad(params) {
     <${note.tag}> ${note.content} </${note.tag}>`
     );
   }
+
+  document.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightBlock(block);
+  });
 }
 
 window.addEventListener("load", pageLoad);
+
+/* document.addEventListener("load", (event) => {
+  document.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+}); */
 
 /* document.querySelectorAll('code').forEach((block) => {
   hljs.highlightBlock(block);
