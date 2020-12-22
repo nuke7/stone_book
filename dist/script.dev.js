@@ -1,13 +1,10 @@
 "use strict";
 
-function pageLoad(params) {
+function pageLoad() {
   var root = document.querySelector("#root");
   var notes = [];
   notes.push({
-    tag: "div",
-    content: "always link css and js in the head"
-  });
-  notes.push({
+    title: "always link css and js in the head",
     tag: "pre",
     content: "<code>\n    &lt;link rel=\"preconnect\" href=\"https://fonts.gstatic.com\"/>\n    &lt;link\n      href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap\"\n      rel=\"stylesheet\"\n    />\n    &lt;link rel=\"stylesheet\" href=\"./css/style.css\" />\n    &lt;script src=\"./script.js\">&lt;/script>\n    </code>"
   });
@@ -15,10 +12,14 @@ function pageLoad(params) {
     tag: "pre",
     content: "<code>\n    let root = document.querySelector(\"#root\");\n    let body = document.querySelector(\"body\");\n    </code>"
   });
+  notes.push({
+    tag: "pre",
+    content: "<code>\n    button *{\n      pointer-events: none;\n      }\n      stopPropagation\n      event bubbling\n    </code>"
+  });
 
   for (var _i = 0, _notes = notes; _i < _notes.length; _i++) {
     note = _notes[_i];
-    root.insertAdjacentHTML("beforeend", "\n    <".concat(note.tag, "> ").concat(note.content, " </").concat(note.tag, ">"));
+    root.insertAdjacentHTML("beforeend", "<div class=\"card\">\n        <h2 class=\"title\">".concat(note.title, "</h2>\n        <").concat(note.tag, "> ").concat(note.content, " </").concat(note.tag, ">\n      </div>"));
   }
 
   document.querySelectorAll("pre code").forEach(function (block) {

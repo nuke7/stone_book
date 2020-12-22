@@ -1,13 +1,9 @@
-function pageLoad(params) {
+function pageLoad() {
   let root = document.querySelector("#root");
   let notes = [];
 
   notes.push({
-    tag: "div",
-    content: `always link css and js in the head`,
-  });
-
-  notes.push({
+    title: `always link css and js in the head`,
     tag: "pre",
     content: `<code>
     &lt;link rel="preconnect" href="https://fonts.gstatic.com"/>
@@ -28,11 +24,24 @@ function pageLoad(params) {
     </code>`,
   });
 
+  notes.push({
+    tag: "pre",
+    content: `<code>
+    button *{
+      pointer-events: none;
+      }
+      stopPropagation
+      event bubbling
+    </code>`,
+  });
+
   for (note of notes) {
     root.insertAdjacentHTML(
       "beforeend",
-      `
-    <${note.tag}> ${note.content} </${note.tag}>`
+      `<div class="card">
+        <h2 class="title">${note.title}</h2>
+        <${note.tag}> ${note.content} </${note.tag}>
+      </div>`
     );
   }
 
