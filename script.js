@@ -17,14 +17,22 @@ function pageLoad() {
   });
 
   notes.push({
+    title: "event listener for dynamically generated elements: <u>if</u>",
     tag: "pre",
-    content: `<code>
-    let root = document.querySelector("#root");
-    let body = document.querySelector("body");
-    </code>`,
+    content: `<code>  
+      document.addEventListener("mouseover", function (e) {
+        if (
+          e.target.tagName.toLowerCase() === "a" ||
+          e.target.tagName.toLowerCase() === "img"
+        ) {
+          circle.classList.toggle("hover");
+        }
+      });
+     </code>`,
   });
 
   notes.push({
+    title: "don't trigger on child elements",
     tag: "pre",
     content: `<code>
     button *{

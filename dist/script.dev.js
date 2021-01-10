@@ -9,10 +9,12 @@ function pageLoad() {
     content: "<code>\n    &lt;link rel=\"preconnect\" href=\"https://fonts.gstatic.com\"/>\n    &lt;link\n      href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap\"\n      rel=\"stylesheet\"\n    />\n    &lt;link rel=\"stylesheet\" href=\"./css/style.css\" />\n    &lt;script src=\"./script.js\">&lt;/script>\n    </code>"
   });
   notes.push({
+    title: "event listener for dynamically generated elements: <u>if</u>",
     tag: "pre",
-    content: "<code>\n    let root = document.querySelector(\"#root\");\n    let body = document.querySelector(\"body\");\n    </code>"
+    content: "<code>  \n      document.addEventListener(\"mouseover\", function (e) {\n        if (\n          e.target.tagName.toLowerCase() === \"a\" ||\n          e.target.tagName.toLowerCase() === \"img\"\n        ) {\n          circle.classList.toggle(\"hover\");\n        }\n      });\n     </code>"
   });
   notes.push({
+    title: "don't trigger on child elements",
     tag: "pre",
     content: "<code>\n    button *{\n      pointer-events: none;\n      }\n      stopPropagation\n      event bubbling\n    </code>"
   });
