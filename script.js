@@ -28,6 +28,7 @@ function pageLoad() {
           circle.classList.toggle("hover");
         }
       });
+      //or data-attribute
      </code>`,
   });
 

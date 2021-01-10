@@ -11,7 +11,7 @@ function pageLoad() {
   notes.push({
     title: "event listener for dynamically generated elements: <u>if</u>",
     tag: "pre",
-    content: "<code>  \n      document.addEventListener(\"mouseover\", function (e) {\n        if (\n          e.target.tagName.toLowerCase() === \"a\" ||\n          e.target.tagName.toLowerCase() === \"img\"\n        ) {\n          circle.classList.toggle(\"hover\");\n        }\n      });\n     </code>"
+    content: "<code>  \n      document.addEventListener(\"mouseover\", function (e) {\n        if (\n          e.target.tagName.toLowerCase() === \"a\" ||\n          e.target.tagName.toLowerCase() === \"img\"\n        ) {\n          circle.classList.toggle(\"hover\");\n        }\n      });\n      //or data-attribute\n     </code>"
   });
   notes.push({
     title: "don't trigger on child elements",
